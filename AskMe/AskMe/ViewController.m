@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "JsonParser.h"
+#import "GroupItem.h"
 
 @interface ViewController ()
 
@@ -16,7 +18,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self loadJson];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+
+// Prses the JSON File
+- (NSArray *)loadJson
+{
+    NSMutableArray * groupItems = [NSMutableArray array];
+    
+    NSString * path = [[NSBundle mainBundle] pathForResource:@"f_two" ofType:@"json"];
+    NSError * error = nil;
+    id parsedObject = [JsonParser parseJSON:[NSData dataWithContentsOfFile:path] error:&error];
+    if ([parsedObject isKindOfClass:[NSArray class]])
+    {
+        for (NSDictionary * item in parsedObject)
+        {
+            GroupItem * groupItem = [GroupItem itemFromObject:item];
+            if (groupItem)
+            {
+                [groupItems addObject:groupItem];
+            }
+        }
+    }
+    else
+    {
+        NSLog(@"%@",[error description]);
+    }
+
+    return groupItems;
 }
 
 - (void)didReceiveMemoryWarning {

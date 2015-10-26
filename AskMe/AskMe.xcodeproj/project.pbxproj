@@ -14,6 +14,11 @@
 		D8EA6C041BDDF37900CCA20C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8EA6C031BDDF37900CCA20C /* Assets.xcassets */; };
 		D8EA6C071BDDF37900CCA20C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8EA6C051BDDF37900CCA20C /* LaunchScreen.storyboard */; };
 		D8EA6C121BDDF37900CCA20C /* AskMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EA6C111BDDF37900CCA20C /* AskMeTests.m */; };
+		D8EA6C1F1BDDF92B00CCA20C /* f_one.json in Resources */ = {isa = PBXBuildFile; fileRef = D8EA6C1D1BDDF92B00CCA20C /* f_one.json */; settings = {ASSET_TAGS = (); }; };
+		D8EA6C201BDDF92B00CCA20C /* f_two.json in Resources */ = {isa = PBXBuildFile; fileRef = D8EA6C1E1BDDF92B00CCA20C /* f_two.json */; settings = {ASSET_TAGS = (); }; };
+		D8EA6C261BDDFA4200CCA20C /* JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EA6C251BDDFA4200CCA20C /* JsonParser.m */; settings = {ASSET_TAGS = (); }; };
+		D8EA6C2A1BDDFE0600CCA20C /* GroupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EA6C291BDDFE0600CCA20C /* GroupItem.m */; settings = {ASSET_TAGS = (); }; };
+		D8EA6C2D1BDDFE1F00CCA20C /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EA6C2C1BDDFE1F00CCA20C /* Item.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,14 @@
 		D8EA6C0D1BDDF37900CCA20C /* AskMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AskMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8EA6C111BDDF37900CCA20C /* AskMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AskMeTests.m; sourceTree = "<group>"; };
 		D8EA6C131BDDF37900CCA20C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8EA6C1D1BDDF92B00CCA20C /* f_one.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = f_one.json; sourceTree = "<group>"; };
+		D8EA6C1E1BDDF92B00CCA20C /* f_two.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = f_two.json; sourceTree = "<group>"; };
+		D8EA6C241BDDFA4200CCA20C /* JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParser.h; sourceTree = "<group>"; };
+		D8EA6C251BDDFA4200CCA20C /* JsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonParser.m; sourceTree = "<group>"; };
+		D8EA6C281BDDFE0600CCA20C /* GroupItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupItem.h; sourceTree = "<group>"; };
+		D8EA6C291BDDFE0600CCA20C /* GroupItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupItem.m; sourceTree = "<group>"; };
+		D8EA6C2B1BDDFE1F00CCA20C /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		D8EA6C2C1BDDFE1F00CCA20C /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +94,9 @@
 		D8EA6BF61BDDF37900CCA20C /* AskMe */ = {
 			isa = PBXGroup;
 			children = (
+				D8EA6C271BDDFDD000CCA20C /* Models */,
+				D8EA6C221BDDFA2E00CCA20C /* Common */,
+				D8EA6C1C1BDDF92B00CCA20C /* Json */,
 				D8EA6BFA1BDDF37900CCA20C /* AppDelegate.h */,
 				D8EA6BFB1BDDF37900CCA20C /* AppDelegate.m */,
 				D8EA6BFD1BDDF37900CCA20C /* ViewController.h */,
@@ -109,6 +125,43 @@
 				D8EA6C131BDDF37900CCA20C /* Info.plist */,
 			);
 			path = AskMeTests;
+			sourceTree = "<group>";
+		};
+		D8EA6C1C1BDDF92B00CCA20C /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				D8EA6C1D1BDDF92B00CCA20C /* f_one.json */,
+				D8EA6C1E1BDDF92B00CCA20C /* f_two.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		D8EA6C221BDDFA2E00CCA20C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D8EA6C231BDDFA2E00CCA20C /* JSON Parser */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D8EA6C231BDDFA2E00CCA20C /* JSON Parser */ = {
+			isa = PBXGroup;
+			children = (
+				D8EA6C241BDDFA4200CCA20C /* JsonParser.h */,
+				D8EA6C251BDDFA4200CCA20C /* JsonParser.m */,
+			);
+			path = "JSON Parser";
+			sourceTree = "<group>";
+		};
+		D8EA6C271BDDFDD000CCA20C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D8EA6C281BDDFE0600CCA20C /* GroupItem.h */,
+				D8EA6C291BDDFE0600CCA20C /* GroupItem.m */,
+				D8EA6C2B1BDDFE1F00CCA20C /* Item.h */,
+				D8EA6C2C1BDDFE1F00CCA20C /* Item.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,7 +244,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8EA6C201BDDF92B00CCA20C /* f_two.json in Resources */,
 				D8EA6C071BDDF37900CCA20C /* LaunchScreen.storyboard in Resources */,
+				D8EA6C1F1BDDF92B00CCA20C /* f_one.json in Resources */,
 				D8EA6C041BDDF37900CCA20C /* Assets.xcassets in Resources */,
 				D8EA6C021BDDF37900CCA20C /* Main.storyboard in Resources */,
 			);
@@ -211,8 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8EA6C2D1BDDFE1F00CCA20C /* Item.m in Sources */,
+				D8EA6C2A1BDDFE0600CCA20C /* GroupItem.m in Sources */,
 				D8EA6BFF1BDDF37900CCA20C /* ViewController.m in Sources */,
 				D8EA6BFC1BDDF37900CCA20C /* AppDelegate.m in Sources */,
+				D8EA6C261BDDFA4200CCA20C /* JsonParser.m in Sources */,
 				D8EA6BF91BDDF37900CCA20C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +458,7 @@
 				D8EA6C181BDDF37900CCA20C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8EA6C191BDDF37900CCA20C /* Build configuration list for PBXNativeTarget "AskMeTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +467,7 @@
 				D8EA6C1B1BDDF37900CCA20C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
