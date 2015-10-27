@@ -20,6 +20,8 @@ typedef enum {
 }
 
 @property (nonatomic, assign) Template templateType;
+@property (nonatomic, strong) NSArray * items;
+@property (nonatomic, strong) NSString * titleString;
 
 +(instancetype)itemFromObject:(NSDictionary *)object;
 

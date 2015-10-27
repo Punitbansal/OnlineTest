@@ -32,15 +32,19 @@
             item.templateType = eTemplate3;
         }
         
+        item.titleString = [object objectForKey:@"label"];
+        
+        
         NSArray * allItems = [object objectForKey:@"items"];
+        NSMutableArray * items = [NSMutableArray array];
         
         for (NSDictionary * dictItem in allItems)
         {
-            Item * childItem = [[Item alloc] init];
-            childItem.title = [dictItem objectForKey:@"label"];
-            childItem.title = [[dictItem objectForKey:@"image"] stringByReplacingOccurrencesOfString:@" " withString:@""];
-            childItem.title = [[dictItem objectForKey:@"web-url"] stringByReplacingOccurrencesOfString:@" " withString:@""];
+            Item * childItem = [Item itemFromObject:dictItem];
+            if (childItem)
+            [items addObject:childItem];
         }
+        item.items = [items copy];
     }
     return item;
 }

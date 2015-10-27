@@ -14,5 +14,6 @@
 @property (nonatomic, strong) NSString * webUrl;
 @property (nonatomic, strong) NSString * imageUrl;
 
++(instancetype)itemFromObject:(NSDictionary *)object;
 
 @end
